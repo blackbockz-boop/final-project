@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui;
+    color: #243e63;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.row {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.row__narrow {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 96px 0;
+}
+
+.purple {
+    color: #6415ff;
+}
+
+section {
+    padding: 0 32px;
+}
+
+main {
+    margin-bottom: 96px;
+}
+
+
+/* 
+
+NAVBAR ↓
+
+*/
+
+
+nav {
+    display: flex;
+    padding-top: 32px;
+}
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding-bottom: 4px;
+}
+
+
+.btn__menu {
+    display: none;
+    background: transparent;
+    border: none;
+    transition: all 300ms ease;
+}
+
+.btn__menu--svg:hover {
+    filter: invert(26%) sepia(94%) saturate(7476%) hue-rotate(261deg) brightness(94%) contrast(115%);
+}
+
+.nav__links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav__links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #243e63;
+    position: relative;
+}
+
+.nav__links a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6415ff;
+    transition: width 0.3s ease;
+}
+
+.nav__links a:not(.btn):hover::after {
+    width: 100%;
+}
+
+.nav__links a:hover {
+    color: #6415ff;
+}
+
+.nav__logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 378px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(300%);
+    transition: all 300ms ease;
+}
+
+.modal__links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__link {
+    color: #1a202c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.modal__link--primary {
+    color: #f7fafc;
+    padding: 12px 32px;
+    background: #6415ff;
+    border-radius: 500px;
+    border: none;
+}
+
+.menu--open .modal {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.btn__menu--close {
+    position: fixed;
+    top: 24px;
+    right: 18px;
+}
+
+
+/* 
+
+HEADER / ABOUT US ↓
+
+*/
+
+
+header .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* 
+
+FEATURES ↓
+
+*/
+
+
+#features {
+    position: relative;
+}
+
+#features .row__narrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* 
+
+QUALITY WORK ↓
+
+*/
+
+
+#quality .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 
+
+STEPS ↓
+
+*/
+
+
+#steps .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 
+
+VALUES ↓
+
+*/
+
+#values .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*
+
+PRICING ↓
+
+*/
+
+
+#pricing .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+
+TESTIMONIALS ↓
+
+*/
+
+
+#testimonials .row {
+    display: flex;
+}
+
+
+/* 
+
+START / CALL TO ACTION ↓
+
+*/
+
+
+
+#start .row {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 
+
+FOOTER ↓
+
+*/
+
+
+footer {
+    padding: 96px 32px;
+    background-color: rgb(100, 21, 255);
+    margin-bottom: -32px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 
+
+MOBILE RESPONSIVENESS ↓
+
+*/
+
+
+@media(max-width: 1280px) {
+    header .row {
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .btn__menu {
+        display: block;
+    }
+    header .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer {
+        padding: 80px 32px;
+    }
+}
+
+@media(max-width: 768px) {
+    #quality .row,
+    #values .row {
+        flex-direction: column-reverse;
+    }
+    #steps .row,
+    #testimonials .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    #pricing .row {
+        margin-top: 40px;
+    }
+}
+
+@media(max-width: 640px) {
+    .container {
+        padding: 80px 0;
+    }
+    .nav__logo {
+        margin: 8px 0;
+        padding-bottom: 4px;
+    }
+    main {
+        margin-bottom: 80px;
+    }
+}
+
+/* Additional styles for new content */
+
+.header__content {
+    max-width: 50%;
+}
+
+.header__content h1 span {
+    color: #6415ff !important;
+}
+
+.header__content p {
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.header__image {
+    max-width: 50%;
+}
+
+.header__image img {
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn--primary {
+    background-color: #6415ff;
+    color: white !important;
+}
+
+.btn--primary:hover {
+    background-color: #5012cc;
+}
+
+.features__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #666;
+}
+
+.quality__content, .steps__content {
+    max-width: 50%;
+}
+
+.quality__content h2, .steps__content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.quality__content p, .steps__content ol {
+    font-size: 18px;
+}
+
+.quality__image, .steps__image {
+    max-width: 50%;
+}
+
+.quality__image img, .steps__image img {
+    width: 100%;
+    height: auto;
+}
+
+.pricing__plans {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.plan {
+    border: 1px solid #ddd;
+    padding: 32px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.plan h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.plan p {
+    font-size: 32px;
+    font-weight: 700;
+    color: #6415ff;
+    margin-bottom: 16px;
+}
+
+.plan ul {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.plan li {
+    margin-bottom: 8px;
+}
+
+.footer__content {
+    max-width: 50%;
+}
+
+.footer__content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.footer__content p {
+    margin-bottom: 16px;
+}
+
+.footer__links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer__links a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer__social {
+    display: flex;
+    gap: 16px;
+}
+
+.footer__social a {
+    color: white;
+    font-size: 24px;
+}
+
+/* Mobile adjustments */
+
+@media(max-width: 1024px) {
+    .nav__links {
+        display: none;
+    }
+    .btn__menu {
+        display: block;
+    }
+    .header__content, .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .footer__content {
+        max-width: 100%;
+    }
+    .features__list {
+        grid-template-columns: 1fr;
+    }
+    .pricing__plans {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 768px) {
+    .header__content h1 {
+        font-size: 36px;
+    }
+    .features__list, .pricing__plans {
+        gap: 16px;
+    }
+}
+
+/* Additional styles for updated content */
+
+.feature i {
+    font-size: 48px;
+    color: #6415ff;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.steps__list {
+    display: flex;
+    gap: 32px;
+}
+
+.step {
+    text-align: center;
+    max-width: 300px;
+}
+
+.step__number {
+    display: block;
+    font-size: 48px;
+    font-weight: 700;
+    color: #6415ff;
+    margin-bottom: 16px;
+}
+
+.values__content {
+    max-width: 50%;
+}
+
+.values__points {
+    margin: 32px 0;
+}
+
+.value h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.testimonial {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonial blockquote p {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 32px;
+}
+
+.testimonial__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.testimonial__author img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.start__content {
+    text-align: center;
+}
+
+.start__buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: #6415ff;
+    border: 2px solid #6415ff;
+}
+
+.btn--secondary:hover {
+    background-color: #6415ff;
+    color: white;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer__column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.footer__column a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer__column a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile updates */
+
+@media(max-width: 1024px) {
+    .nav__links {
+        display: none;
+    }
+    .header__content, .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .values__content, .values__image, .footer__content {
+        max-width: 100%;
+    }
+    .features__list {
+        grid-template-columns: 1fr;
+    }
+    .steps__list {
+        flex-direction: column;
+    }
+    .pricing__plans {
+        flex-direction: column;
+    }
+    .footer__links {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
