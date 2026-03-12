@@ -920,7 +920,11 @@ MOBILE RESPONSIVENESS ↓
     .btn__menu {
         display: block;
     }
-    .header__content, .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .footer__content {
+    .header__content {
+        width: 70%;
+        max-width: 100%;
+    }
+    .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .footer__content {
         width: 100%;
         max-width: 100%;
     }
@@ -934,9 +938,14 @@ MOBILE RESPONSIVENESS ↓
     .features__list {
         grid-template-columns: 1fr;
     }
+    .services {
+        justify-content: center;
+    }
     .service {
         width: 100%;
         padding: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
     .pricing__plans {
         flex-direction: column;
@@ -944,8 +953,24 @@ MOBILE RESPONSIVENESS ↓
 }
 
 @media(max-width: 768px) {
+    .header__content {
+        width: 70%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .header__email,
+    .header__customers {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .header__content h1 {
         font-size: 36px;
+    }
+    .service {
+        align-items: center;
     }
     .features__list, .pricing__plans {
         gap: 16px;
@@ -1283,12 +1308,23 @@ footer .footer__row {
     .nav__links {
         display: none;
     }
-    .header__content, .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .values__content, .values__image, .footer__content {
+    .header__content {
+        width: 70%;
+        max-width: 100%;
+    }
+    .header__image, .quality__content, .quality__image, .steps__content, .steps__image, .values__content, .values__image, .footer__content {
         width: 100%;
         max-width: 100%;
     }
     .features__list {
         grid-template-columns: 1fr;
+    }
+    .services {
+        justify-content: center;
+    }
+    .service {
+        margin-left: auto;
+        margin-right: auto;
     }
     .steps__list {
         flex-direction: column;
@@ -1320,6 +1356,10 @@ footer .footer__row {
         align-items: center;
     }
 
+    header .row {
+        align-items: center;
+    }
+
     .header__content,
     .quality__content,
     .steps__content,
@@ -1329,6 +1369,26 @@ footer .footer__row {
         align-items: center;
     }
 
+    .values__content {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .values__image {
+        justify-content: flex-start;
+    }
+
+    .values__list {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .value,
+    .value__title,
+    .value__para {
+        text-align: left;
+    }
+
     #quality .section__title,
     #values .section__title,
     #steps .section__title,
@@ -1336,6 +1396,11 @@ footer .footer__row {
     #testimonials .section__para,
     .steps__content h2 {
         text-align: center;
+    }
+
+    #values .section__title,
+    #values .section__para {
+        text-align: left;
     }
 
     .step,
